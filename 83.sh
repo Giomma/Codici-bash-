@@ -34,7 +34,7 @@ CPU3=$(echo "scale=4; $(ps -p $PID3 o %C | grep [[:digit:]]) / 100" | bc)
 CPUSUM=$(echo $CPU1 + $CPU2 + $CPU3 | bc)
 
 niceness=$(echo " 20 - $CPUSUM*20 "| bc)
-nicenessINT=$(echo $niceness | cut -c1-2) #arrotondo o non la prende
+nicenessINT=$(echo $niceness | cut -c1-2) #arrotondo o non la prende(valido solo per due cifre,se ho qualcosa come 6,7676 non lo prende perchè taglierebbe 6,7
 sudo renice -n "-$nicenessINT" -p $PID4 #sudo perchè per una maggiore priorità ci vuole,quindi probabilmente l esercizio non si fa cosi
 sleep 5
 done
