@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#praticamente il codice del webcrawler del pdf, cambiano solo gli ultimi due righi.
 
 
 
